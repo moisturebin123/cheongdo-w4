@@ -30,7 +30,7 @@
                 <a href="#programs" onclick="goHome()" class="hover:text-gray-900 transition">주요 사업</a>
                 <a href="#videos" onclick="goHome()" class="hover:text-gray-900 transition">미디어</a>
             </div>
-            <button class="bg-gray-900 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-gray-800 transition">입주 문의</button>
+            <button onclick="openInquiryModal()" class="bg-gray-900 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-blue-600 transition shadow-md transform hover:scale-105">입주 문의</button>
         </div>
     </nav>
 
@@ -413,8 +413,46 @@
         </footer>
     </div>
 
+    <div id="inquiry-modal" class="fixed inset-0 bg-black/60 hidden items-center justify-center z-[100] px-4 backdrop-blur-sm transition-opacity duration-300 opacity-0">
+        <div class="bg-white rounded-3xl p-8 md:p-12 max-w-lg w-full shadow-2xl relative transform scale-95 transition-transform duration-300">
+            <button onclick="closeInquiryModal()" class="absolute top-6 right-6 text-gray-400 hover:text-gray-900 transition bg-gray-100 hover:bg-gray-200 rounded-full p-2">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            
+            <div class="mb-8 text-center">
+                <span class="bg-blue-100 text-blue-600 font-bold px-3 py-1 rounded-full text-xs tracking-wider uppercase mb-4 inline-block">Contact Us</span>
+                <h2 class="text-3xl font-black text-gray-900 mb-2">입주 및 협업 문의</h2>
+                <p class="text-gray-500 text-sm">청도 AI 크리에이티브 빌리지에 합류하세요.</p>
+            </div>
+            
+            <form onsubmit="submitInquiry(event)" class="space-y-5">
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-2">성함 / 소속</label>
+                    <input type="text" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition bg-gray-50 focus:bg-white" placeholder="홍길동 / OO에이전시">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-2">연락처 (이메일 또는 전화번호)</label>
+                    <input type="text" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition bg-gray-50 focus:bg-white" placeholder="hello@example.com">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-2">관심 분야</label>
+                    <select class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition bg-gray-50 focus:bg-white text-gray-700">
+                        <option>빈집 재생 스튜디오 입주</option>
+                        <option>AI 로컬 에이전시 협업</option>
+                        <option>청려도원 코리빙 타운 입주</option>
+                        <option>기타 제휴 및 문의</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-2">문의 내용</label>
+                    <textarea required rows="4" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition bg-gray-50 focus:bg-white resize-none" placeholder="자유롭게 남겨주세요."></textarea>
+                </div>
+                <button type="submit" class="w-full py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transition shadow-lg mt-4 transform hover:-translate-y-1">문의 접수하기</button>
+            </form>
+        </div>
+    </div>
+
     <script>
-        // 전체 프로그램 리스트 (네비게이션용)
         const programList = [
             { id: 'space', title: '빈집 재생 스페이스', tag: 'Space' },
             { id: 'business', title: 'AI 로컬 에이전시', tag: 'Business' },
@@ -650,7 +688,6 @@
                     </section>
                 `
             },
-            // 💡 [대폭 확장됨] 7가지 상세 섹션으로 꽉꽉 채워진 PRD 페이지
             'prd': {
                 title: '제품 요구사항 문서 (PRD)',
                 sidebar: `
@@ -665,7 +702,7 @@
                 content: `
                     <section id="section1" class="mb-16">
                         <h2 class="text-2xl font-bold text-gray-900 mb-6">1. 배경 및 비전 정의 (Background & Vision)</h2>
-                        <p class="mb-4">대한민국은 심각한 지방 소멸 위기에 직면해 있으며, 그 상흔은 수백 채의 방치된 '빈집'으로 나타나고 있습니다. 본 프로젝트는 이 골칫거리인 유휴 공간을 <strong>'디지털 노마드와 로컬 크리에이터를 위한 최적의 작업 공간'</strong>으로 탈바꿈시킵니다.</p>
+                        <p class="mb-4">대한민국은 심각한 지방 소멸 위기에 직면해 있으며, 그 상흔은 수백 채의 방치된 빈집으로 나타나고 있습니다. 본 프로젝트는 이 골칫거리인 유휴 공간을 <strong>디지털 노마드와 로컬 크리에이터를 위한 최적의 작업 공간</strong>으로 탈바꿈시킵니다.</p>
                         <p class="mb-6">우리의 비전은 극단적으로 낮아진 임대료(고정비)를 통해 창작자들에게 실패를 두려워하지 않을 자유(경제적 해자)를 제공하고, 이들이 지역의 특산물을 AI로 브랜딩하여 자생적인 비즈니스 생태계를 구축하도록 돕는 것입니다.</p>
                     </section>
 
@@ -674,9 +711,9 @@
                         <p class="mb-4">다층적인 이해관계자들의 상충하는 니즈를 하나의 플랫폼으로 묶어냅니다.</p>
                         <div class="bg-gray-50 border border-gray-200 p-6 rounded-2xl mb-6">
                             <ul class="space-y-4 text-gray-700">
-                                <li><strong>🔥 Z세대 크리에이터:</strong> "아이디어와 AI 툴은 쓸 줄 아는데, 서울의 높은 월세 때문에 나만의 스튜디오를 구하거나 브랜드를 실험할 자본이 없어."</li>
-                                <li><strong>🔥 지역 소상공인:</strong> "우리 집 감말랭이가 진짜 맛있는데, 요즘 젊은 애들 취향에 맞게 포장하고 인스타그램에 올릴 줄 아는 직원을 구할 수가 없어."</li>
-                                <li><strong>🔥 지자체 담당자:</strong> "빈집 철거 지원금을 아무리 줘도 흉물이 줄지 않고, 단순 관광객이 아닌 세금을 내고 거주할 실질적인 생활 인구가 필요해."</li>
+                                <li><strong>🔥 Z세대 크리에이터:</strong> 아이디어와 AI 툴은 쓸 줄 아는데, 서울의 높은 월세 때문에 나만의 스튜디오를 구하거나 브랜드를 실험할 자본이 없어.</li>
+                                <li><strong>🔥 지역 소상공인:</strong> 우리 집 감말랭이가 진짜 맛있는데, 요즘 젊은 애들 취향에 맞게 포장하고 인스타그램에 올릴 줄 아는 직원을 구할 수가 없어.</li>
+                                <li><strong>🔥 지자체 담당자:</strong> 빈집 철거 지원금을 아무리 줘도 흉물이 줄지 않고, 단순 관광객이 아닌 세금을 내고 거주할 실질적인 생활 인구가 필요해.</li>
                             </ul>
                         </div>
                     </section>
@@ -704,9 +741,9 @@
                         <h2 class="text-2xl font-bold text-gray-900 mb-6">4. 사용자 여정 지도 (User Journey Map)</h2>
                         <p class="mb-6">크리에이터가 청도에 관심을 갖고 완전히 정착하기까지의 핵심 여정입니다.</p>
                         <ol class="list-decimal pl-5 space-y-3 text-gray-700">
-                            <li><strong>인지 (Awareness):</strong> 인스타그램 숏폼을 통해 '월 10만 원대 프리미엄 작업실' 광고를 접하고 호기심을 가짐.</li>
+                            <li><strong>인지 (Awareness):</strong> 인스타그램 숏폼을 통해 월 10만 원대 프리미엄 작업실 광고를 접하고 호기심을 가짐.</li>
                             <li><strong>탐색 및 예약 (Consideration):</strong> 웹사이트에 접속해 빈집의 리모델링 상태(VR)와 인터넷 속도망을 확인 후 1달 워케이션을 결제함.</li>
-                            <li><strong>온보딩 (Onboarding):</strong> 청도 도착 첫날, 웰컴 라운지에서 '로컬 멘토'를 만나 쓰레기 분리수거 등 생활 규칙을 안내받음.</li>
+                            <li><strong>온보딩 (Onboarding):</strong> 청도 도착 첫날, 웰컴 라운지에서 로컬 멘토를 만나 쓰레기 분리수거 등 생활 규칙을 안내받음.</li>
                             <li><strong>활성화 (Activation):</strong> 코워킹 라운지에서 동네 떡집 브랜딩 프로젝트 의뢰를 매칭받고, AI 기술을 활용해 실제 첫 수익을 창출함.</li>
                             <li><strong>유지 및 추천 (Retention & Referral):</strong> 저렴한 주거비와 늘어난 가처분 소득에 만족하여 1년 장기 계약으로 전환하고, 도시의 동료 크리에이터들을 청도로 초대함.</li>
                         </ol>
@@ -727,7 +764,7 @@
                             <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200">
                                 <h5 class="font-bold text-gray-900 mb-2 text-lg">🔎 브랜드 평판 및 인지도</h5>
                                 <ul class="list-disc pl-5 text-gray-600 space-y-1 text-sm">
-                                    <li>'청도 워케이션', '청도 한달살기' 검색량(Digital Demand) 추이</li>
+                                    <li>청도 워케이션, 청도 한달살기 검색량(Digital Demand) 추이</li>
                                     <li>소셜 미디어 내 청도 관련 긍/부정 감성 분석</li>
                                 </ul>
                             </div>
@@ -740,8 +777,8 @@
                         <div class="bg-blue-50 border border-blue-100 p-6 rounded-2xl mb-6">
                             <ul class="space-y-3 text-gray-700">
                                 <li><strong>법적 리스크 (농어촌 민박업 규제):</strong> 현행법상 소유주가 상주하지 않는 빈집의 단기 임대는 불법 소지가 있음.</li>
-                                <li><strong>돌파 전략 (규제 샌드박스):</strong> 과학기술정보통신부 'ICT 규제 샌드박스 실증특례'를 신청하여 2년간 한시적 합법 영업권을 확보.</li>
-                                <li><strong>지속가능 전략 (조례 제정):</strong> 특례 기간 동안 안전성 및 지역 경제 기여도를 데이터로 증명하여, 청도군 자체 '빈집 활용 특례 조례' 제정을 유도함.</li>
+                                <li><strong>돌파 전략 (규제 샌드박스):</strong> 과학기술정보통신부 ICT 규제 샌드박스 실증특례를 신청하여 2년간 한시적 합법 영업권을 확보.</li>
+                                <li><strong>지속가능 전략 (조례 제정):</strong> 특례 기간 동안 안전성 및 지역 경제 기여도를 데이터로 증명하여, 청도군 자체 빈집 활용 특례 조례 제정을 유도함.</li>
                             </ul>
                         </div>
                     </section>
@@ -777,7 +814,6 @@
             document.getElementById('sidebar-menu').innerHTML = data.sidebar;
             document.getElementById('detail-content').innerHTML = data.content;
             
-            // 💡 [NEW] 하단 네비게이션 동적 렌더링 로직
             let navHtml = '';
             programList.forEach(item => {
                 if(item.id !== type) {
@@ -811,6 +847,40 @@
             document.getElementById('home-view').classList.remove('hidden');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
+
+        // 💡 [NEW] 입주 문의 모달창 제어 자바스크립트
+        function openInquiryModal() {
+            const modal = document.getElementById('inquiry-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            // 부드러운 애니메이션 효과
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modal.querySelector('div').classList.remove('scale-95');
+            }, 10);
+        }
+
+        function closeInquiryModal() {
+            const modal = document.getElementById('inquiry-modal');
+            modal.classList.add('opacity-0');
+            modal.querySelector('div').classList.add('scale-95');
+            // 애니메이션 끝난 후 완전 숨김
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }, 300);
+        }
+
+        function submitInquiry(e) {
+            e.preventDefault(); // 페이지 새로고침 방지
+            alert('문의가 성공적으로 접수되었습니다. 담당자가 확인 후 빠른 시일 내에 연락드리겠습니다!');
+            closeInquiryModal();
+        }
+
+        // 모달 바깥 배경 클릭 시 닫기
+        document.getElementById('inquiry-modal').addEventListener('click', function(e) {
+            if (e.target === this) closeInquiryModal();
+        });
     </script>
 </body>
 </html>
