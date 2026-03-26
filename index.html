@@ -108,29 +108,49 @@
                 <div class="text-center mb-16">
                     <h2 class="text-sm font-bold text-blue-600 tracking-widest uppercase mb-4">Target Persona</h2>
                     <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">누구를 위해 설계할 것인가?</h3>
-                    <p class="text-gray-500">성공적인 로컬 비즈니스 생태계를 위해 정의된 4가지 핵심 이해관계자입니다.</p>
+                    <p class="text-gray-500">카드를 클릭하시면 각 페르소나의 <strong class="text-blue-600">Before & After 시나리오</strong>와 상세 프로필을 확인하실 수 있습니다.</p>
                 </div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-lg transition transform hover:-translate-y-1 group">
-                        <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mb-6 font-black text-xl group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">1</div>
-                        <h4 class="text-lg font-bold text-gray-900 mb-3">20대 로컬 크리에이터</h4>
-                        <p class="text-gray-500 text-sm leading-relaxed">Midjourney, Veo3 등 생성형 AI를 활용해 로컬 브랜딩을 시도하지만, 도시의 높은 임대료로 인해 작업 공간 확보에 어려움을 겪고 있습니다.</p>
+                    <div onclick="openPersonaModal(1)" class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition transform hover:-translate-y-2 cursor-pointer group text-center">
+                        <div class="w-24 h-24 mx-auto bg-gray-200 rounded-full mb-6 overflow-hidden border-4 border-blue-50 group-hover:border-blue-200 transition">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500" alt="김지우">
+                        </div>
+                        <h4 class="text-lg font-black text-gray-900 mb-1">김지우 (27)</h4>
+                        <p class="text-blue-600 text-sm font-bold mb-4">20대 로컬 크리에이터</p>
+                        <p class="text-gray-500 text-sm leading-relaxed line-clamp-3">"월세 80만 원 내고 원룸에서 작업하느니, 10만 원에 시골 한옥 전체를 스튜디오로 쓰고 싶어요."</p>
+                        <div class="mt-4 text-xs font-bold text-gray-400 group-hover:text-blue-600 transition">상세 프로필 보기 →</div>
                     </div>
-                    <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-lg transition transform hover:-translate-y-1 group">
-                        <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mb-6 font-black text-xl group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">2</div>
-                        <h4 class="text-lg font-bold text-gray-900 mb-3">30대 프리랜서</h4>
-                        <p class="text-gray-500 text-sm leading-relaxed">리모트 워크와 워케이션을 지향하며, 귀농/귀촌을 결심하기 전에 저렴한 비용으로 실제 지역 생활을 깊이 있게 체험해 보고 싶어 합니다.</p>
+
+                    <div onclick="openPersonaModal(2)" class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition transform hover:-translate-y-2 cursor-pointer group text-center">
+                        <div class="w-24 h-24 mx-auto bg-gray-200 rounded-full mb-6 overflow-hidden border-4 border-blue-50 group-hover:border-blue-200 transition">
+                            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500" alt="박도윤">
+                        </div>
+                        <h4 class="text-lg font-black text-gray-900 mb-1">박도윤 (34)</h4>
+                        <p class="text-blue-600 text-sm font-bold mb-4">30대 프리랜서 노마드</p>
+                        <p class="text-gray-500 text-sm leading-relaxed line-clamp-3">"귀촌하기엔 겁나고, 진짜 촌캉스 하면서 일도 할 수 있는 완벽한 중간 지대가 필요해요."</p>
+                        <div class="mt-4 text-xs font-bold text-gray-400 group-hover:text-blue-600 transition">상세 프로필 보기 →</div>
                     </div>
-                    <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-lg transition transform hover:-translate-y-1 group">
-                        <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mb-6 font-black text-xl group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">3</div>
-                        <h4 class="text-lg font-bold text-gray-900 mb-3">40대 지자체 주무관</h4>
-                        <p class="text-gray-500 text-sm leading-relaxed">관내 빈집 실태 조사 데이터를 효율적으로 관리하고, 단순 관광객이 아닌 '실질적인 생활 인구 유입'이라는 객관적 성과 증명이 필요합니다.</p>
+
+                    <div onclick="openPersonaModal(3)" class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition transform hover:-translate-y-2 cursor-pointer group text-center">
+                        <div class="w-24 h-24 mx-auto bg-gray-200 rounded-full mb-6 overflow-hidden border-4 border-blue-50 group-hover:border-blue-200 transition">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500" alt="이정훈">
+                        </div>
+                        <h4 class="text-lg font-black text-gray-900 mb-1">이정훈 (45)</h4>
+                        <p class="text-blue-600 text-sm font-bold mb-4">40대 지자체 주무관</p>
+                        <p class="text-gray-500 text-sm leading-relaxed line-clamp-3">"사진만 찍고 가는 관광객이 아니라, 세금을 내고 거주할 '실질적 생활 인구' 데이터가 필요합니다."</p>
+                        <div class="mt-4 text-xs font-bold text-gray-400 group-hover:text-blue-600 transition">상세 프로필 보기 →</div>
                     </div>
-                    <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-lg transition transform hover:-translate-y-1 group">
-                        <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mb-6 font-black text-xl group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">4</div>
-                        <h4 class="text-lg font-bold text-gray-900 mb-3">60대 은퇴자 (소유주)</h4>
-                        <p class="text-gray-500 text-sm leading-relaxed">부모님이 남기신 고향 집을 헐기는 아쉽지만, 장기간 방치 시 부과되는 빈집 세금과 지속적인 관리 비용 문제를 해결하고 싶어 합니다.</p>
+
+                    <div onclick="openPersonaModal(4)" class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition transform hover:-translate-y-2 cursor-pointer group text-center">
+                        <div class="w-24 h-24 mx-auto bg-gray-200 rounded-full mb-6 overflow-hidden border-4 border-blue-50 group-hover:border-blue-200 transition">
+                            <img src="https://picsum.photos/id/65/400/400" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500" alt="최순자">
+                        </div>
+                        <h4 class="text-lg font-black text-gray-900 mb-1">최순자 (68)</h4>
+                        <p class="text-blue-600 text-sm font-bold mb-4">60대 빈집 소유주</p>
+                        <p class="text-gray-500 text-sm leading-relaxed line-clamp-3">"고향 집을 허물긴 아까운데 갈수록 폐가가 돼서 골치예요. 누가 알아서 고치고 관리해주면 좋겠네."</p>
+                        <div class="mt-4 text-xs font-bold text-gray-400 group-hover:text-blue-600 transition">상세 프로필 보기 →</div>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -228,11 +248,11 @@
                 <h2 class="text-sm font-bold text-blue-400 tracking-widest uppercase mb-4">Project Masterplan</h2>
                 <h3 class="text-3xl md:text-4xl font-bold mb-6">성공을 증명할 완벽한 실행 설계도</h3>
                 <p class="text-gray-400 mb-10 leading-relaxed text-lg">
-                    이곳은 단순한 상상력이 아닌 철저한 비즈니스 프레임워크로 작동합니다.<br>규제 리스크 대응, MVP 우선순위, 3개년 로드맵, 그리고 브랜드 평판 분석 지표(KPI)가 담긴<br><strong>PRD(제품 요구사항 문서)</strong> 전문을 확인하세요.
+                    이곳은 단순한 상상력이 아닌 철저한 비즈니스 프레임워크로 작동합니다.<br>규제 리스크 대응, 초기 필수 도입 서비스, 3개년 로드맵, 그리고 브랜드 평판 분석 지표(KPI)가 담긴<br><strong>프로젝트 통합 실행 기획서</strong> 전문을 확인하세요.
                 </p>
                 <button onclick="openDetail('prd')" class="py-4 px-10 bg-blue-600 rounded-full font-bold hover:bg-blue-700 transition shadow-lg transform hover:scale-105 inline-flex items-center">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                    PRD 상세 기획서 열람하기
+                    통합 실행 기획서 열람하기
                 </button>
             </div>
         </section>
@@ -307,13 +327,15 @@
                         <span class="text-xs font-bold text-blue-600 mb-2 block">로컬키트</span>
                         <h4 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition line-clamp-2">예술과 도시재생의 만남, 전주 팔복예술공장</h4>
                     </a>
+                    
                     <a href="https://www.yna.co.kr/view/AKR20240311076900530" target="_blank" class="group block border border-gray-100 rounded-2xl p-4 hover:shadow-lg transition bg-gray-50">
                         <div class="overflow-hidden rounded-xl mb-4 h-48 bg-gray-200">
-                            <img src="https://picsum.photos/id/414/600/400" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <img src="https://picsum.photos/id/1040/600/400" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                         </div>
                         <span class="text-xs font-bold text-blue-600 mb-2 block">연합뉴스</span>
                         <h4 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition line-clamp-2">[빈집재생사업] ① '집한채가 1천400원'…이탈리아의 빈집 해법</h4>
                     </a>
+                    
                     <a href="https://www.incheontoday.com/news/articleView.html?idxno=112240" target="_blank" class="group block border border-gray-100 rounded-2xl p-4 hover:shadow-lg transition bg-gray-50">
                         <div class="overflow-hidden rounded-xl mb-4 h-48 bg-gray-200">
                             <img src="https://picsum.photos/id/515/600/400" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -413,30 +435,78 @@
         </footer>
     </div>
 
+    <div id="persona-modal" class="fixed inset-0 bg-black/70 hidden items-center justify-center z-[110] px-4 backdrop-blur-md transition-opacity duration-300 opacity-0">
+        <div class="bg-white rounded-3xl w-full max-w-4xl max-h-[90vh] overflow-y-auto shadow-2xl relative transform scale-95 transition-transform duration-300 flex flex-col md:flex-row">
+            
+            <button onclick="closePersonaModal()" class="absolute top-4 right-4 z-10 text-gray-400 hover:text-gray-900 transition bg-white/80 hover:bg-white rounded-full p-2 shadow-sm">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            
+            <div class="md:w-2/5 bg-gray-50 p-10 flex flex-col items-center text-center border-r border-gray-100">
+                <div class="w-32 h-32 md:w-40 md:h-40 rounded-full mb-6 overflow-hidden border-4 border-white shadow-lg relative">
+                    <img id="persona-img" src="" class="w-full h-full object-cover" alt="Persona Image">
+                </div>
+                <span id="persona-role" class="bg-blue-100 text-blue-600 font-bold px-3 py-1 rounded-full text-xs tracking-wider mb-3"></span>
+                <h3 id="persona-name" class="text-3xl font-black text-gray-900 mb-2"></h3>
+                <p id="persona-location" class="text-gray-500 text-sm font-medium mb-8"></p>
+                
+                <div class="relative w-full text-left md:text-center px-4">
+                    <svg class="absolute top-0 left-0 w-5 h-5 text-blue-200 -translate-x-2 -translate-y-2" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true"><path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z"></path></svg>
+                    <p id="persona-quote" class="text-gray-800 font-bold leading-relaxed relative z-10 italic"></p>
+                </div>
+            </div>
+            
+            <div class="md:w-3/5 p-10 bg-white">
+                <div class="mb-8">
+                    <h4 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-4 border-b border-gray-100 pb-2">Before & After</h4>
+                    <div class="space-y-4">
+                        <div class="bg-red-50 p-4 rounded-2xl border border-red-100">
+                            <strong class="text-red-600 block mb-1 text-sm">😢 도입 전 (Pain Point)</strong>
+                            <p id="persona-before" class="text-gray-700 text-sm leading-relaxed"></p>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-2xl border border-blue-100">
+                            <strong class="text-blue-600 block mb-1 text-sm">😎 도입 후 (Solution)</strong>
+                            <p id="persona-after" class="text-gray-700 text-sm leading-relaxed"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-8">
+                    <h4 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-4 border-b border-gray-100 pb-2">User Journey Map</h4>
+                    <p id="persona-journey" class="text-gray-700 text-sm leading-relaxed bg-gray-50 p-4 rounded-2xl"></p>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-4 border-b border-gray-100 pb-2">초기 필수 도입 기능 연계</h4>
+                    <ul id="persona-features" class="space-y-2">
+                        </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div id="inquiry-modal" class="fixed inset-0 bg-black/60 hidden items-center justify-center z-[100] px-4 backdrop-blur-sm transition-opacity duration-300 opacity-0">
         <div class="bg-white rounded-3xl p-8 md:p-12 max-w-lg w-full shadow-2xl relative transform scale-95 transition-transform duration-300">
             <button onclick="closeInquiryModal()" class="absolute top-6 right-6 text-gray-400 hover:text-gray-900 transition bg-gray-100 hover:bg-gray-200 rounded-full p-2">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
-            
             <div class="mb-8 text-center">
                 <span class="bg-blue-100 text-blue-600 font-bold px-3 py-1 rounded-full text-xs tracking-wider uppercase mb-4 inline-block">Contact Us</span>
                 <h2 class="text-3xl font-black text-gray-900 mb-2">입주 및 협업 문의</h2>
                 <p class="text-gray-500 text-sm">청도 AI 크리에이티브 빌리지에 합류하세요.</p>
             </div>
-            
             <form onsubmit="submitInquiry(event)" class="space-y-5">
                 <div>
                     <label class="block text-sm font-bold text-gray-700 mb-2">성함 / 소속</label>
-                    <input type="text" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition bg-gray-50 focus:bg-white" placeholder="홍길동 / OO에이전시">
+                    <input type="text" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition bg-gray-50 focus:bg-white" placeholder="홍길동 / OO에이전시">
                 </div>
                 <div>
-                    <label class="block text-sm font-bold text-gray-700 mb-2">연락처 (이메일 또는 전화번호)</label>
-                    <input type="text" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition bg-gray-50 focus:bg-white" placeholder="hello@example.com">
+                    <label class="block text-sm font-bold text-gray-700 mb-2">연락처</label>
+                    <input type="text" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition bg-gray-50 focus:bg-white" placeholder="hello@example.com">
                 </div>
                 <div>
                     <label class="block text-sm font-bold text-gray-700 mb-2">관심 분야</label>
-                    <select class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition bg-gray-50 focus:bg-white text-gray-700">
+                    <select class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition bg-gray-50 focus:bg-white text-gray-700">
                         <option>빈집 재생 스튜디오 입주</option>
                         <option>AI 로컬 에이전시 협업</option>
                         <option>청려도원 코리빙 타운 입주</option>
@@ -445,7 +515,7 @@
                 </div>
                 <div>
                     <label class="block text-sm font-bold text-gray-700 mb-2">문의 내용</label>
-                    <textarea required rows="4" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition bg-gray-50 focus:bg-white resize-none" placeholder="자유롭게 남겨주세요."></textarea>
+                    <textarea required rows="4" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition bg-gray-50 focus:bg-white resize-none" placeholder="자유롭게 남겨주세요."></textarea>
                 </div>
                 <button type="submit" class="w-full py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transition shadow-lg mt-4 transform hover:-translate-y-1">문의 접수하기</button>
             </form>
@@ -453,6 +523,54 @@
     </div>
 
     <script>
+        // 페르소나 상세 데이터
+        const personaData = {
+            1: {
+                name: "김지우 (27세)",
+                role: "20대 로컬 크리에이터",
+                location: "서울 마포구 거주, 프리랜서 영상 & AI 디자이너",
+                image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+                quote: "월세 80만 원 내고 좁은 원룸에서 작업하느니, 차라리 10만 원 내고 시골 한옥 전체를 내 맘대로 스튜디오로 쓰고 싶어요.",
+                before: "서울의 살인적인 주거비와 작업실 임대료 때문에 매번 외주 단가 후려치기에 시달리며 번아웃 직전. 내 브랜드를 키울 자본과 심리적 여유가 없습니다.",
+                after: "청도의 빈집 스튜디오로 이주 후 주거비 부담이 제로에 가까워졌습니다. 여유로운 환경에서 동네 떡집과 농장들을 AI로 리브랜딩해주며 로컬에서 확실한 포트폴리오와 수익을 창출합니다.",
+                journey: "인스타그램 숏폼 영상으로 인지 → 플랫폼 접속 후 빈집 스튜디오 VR 투어 확인 → 1개월 워케이션 패키지 결제 → 지역 소상공인 브랜딩 매칭 게시판 탐색 및 계약 성사.",
+                features: ["단기/장기 예약 및 간편 결제 시스템 (필수)", "AI 로컬 에이전시 성과물 공유 갤러리 (장기 연계)"]
+            },
+            2: {
+                name: "박도윤 (34세)",
+                role: "30대 프리랜서 노마드",
+                location: "판교 IT 기업 출신, 워케이션 지향 풀스택 개발자",
+                image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80",
+                quote: "노트북 하나만 있으면 어디서든 일할 수 있죠. 덜컥 귀촌하기엔 겁나고, 진짜 촌캉스 하면서 일도 할 수 있는 완벽한 중간 지대가 필요해요.",
+                before: "복잡한 도시를 떠나 러스틱 라이프를 꿈꾸지만, 막상 정보가 부족하고 초기 정착 비용 리스크가 커서 실행에 옮기지 못합니다. 시골 텃세에 대한 막연한 두려움도 큽니다.",
+                after: "청려도원 코리빙 타운에 입주해 초고속 기가 인터넷망으로 본업을 완벽히 소화합니다. 주말엔 로컬 멘토의 도움으로 소셜 다이닝에 참여하며 지역 커뮤니티에 자연스럽게 녹아듭니다.",
+                journey: "청도 한달살기 검색 → 주변 인프라(맛집/병원) 지도 꼼꼼히 확인 → 커뮤니티 게시판 기존 입주자 후기 정독 → 전자 임대차 계약 진행.",
+                features: ["위치 기반 동네 맛집/병원 지도 (핵심 고도화)", "사용자 리뷰 및 평점 시스템 (핵심 고도화)", "로컬 멘토 매칭 신청 (핵심 고도화)"]
+            },
+            3: {
+                name: "이정훈 (45세)",
+                role: "40대 지자체 주무관",
+                location: "청도군청 농촌재생과 팀장",
+                image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80",
+                quote: "사진만 찍고 가는 관광객이 아니라, 세금을 내고 지역 경제를 굴려줄 '실질적 생활 인구' 데이터를 윗선에 증명해야 합니다.",
+                before: "흩어져 있는 관내 빈집 실태 조사 데이터를 엑셀로 수기 관리합니다. 실효성 없는 일회성 정책과 삭감되는 대응기금 예산 사이에서 매년 엄청난 실적 압박을 받습니다.",
+                after: "플랫폼의 관리자 대시보드를 통해 리모델링된 빈집의 가동률과 청년 유입 데이터를 실시간으로 모니터링합니다. 투명한 데이터 기반의 행정으로 우수 지자체 표창을 수상합니다.",
+                journey: "플랫폼 관리자용 백오피스 로그인 → 월별 공간 예약률 및 체류 시간 데이터 추출 → 브랜드 인지도(KPI) 리포트 다운로드 및 결재 상신.",
+                features: ["운영자용 예약 현황 및 통계 대시보드 (핵심 고도화)", "빈집 공간 데이터베이스 연동 (필수)"]
+            },
+            4: {
+                name: "최순자 (68세)",
+                role: "60대 빈집 소유주",
+                location: "대구 거주, 청도 부모님 상속 주택 보유",
+                image: "https://picsum.photos/id/65/400/400",
+                quote: "고향 집을 허물긴 아까운데 갈수록 폐가가 돼서 골치예요. 복잡한 거 없이 누가 알아서 예쁘게 고치고 관리해주면 오죽 좋을까.",
+                before: "장기간 방치된 빈집 때문에 부과되는 빈집세와 누수/잡초 등 지속적인 관리 비용 문제로 골머리를 앓습니다. 복잡한 서류 작업이나 부동산 거래는 부담스럽습니다.",
+                after: "플랫폼에 '위탁 등록' 한 번 신청했더니, 청년들이 알아서 집을 트렌디하게 고치고 관리해 줍니다. 세금 문제 해결은 물론 매월 소정의 임대 수익까지 덤으로 얻게 되었습니다.",
+                journey: "자녀의 도움으로 모바일 접속 → 내 빈집 위탁하기 간편 신청 → 현장 실사 후 원클릭 전자 계약 서명 → 매월 임대료 정산 내역 알림 확인.",
+                features: ["빈집 매물 간편 위탁 등록 시스템 (필수)", "소유주 맞춤형 비대면 전자 계약 기능 (필수)"]
+            }
+        };
+
         const programList = [
             { id: 'space', title: '빈집 재생 스페이스', tag: 'Space' },
             { id: 'business', title: 'AI 로컬 에이전시', tag: 'Business' },
@@ -460,7 +578,8 @@
             { id: 'incubator', title: '비즈니스 엑셀러레이팅', tag: 'Methodology' },
             { id: 'heritage', title: '로컬 헤리티지 아트', tag: 'Culture' },
             { id: 'hideout', title: '청년 아지트', tag: 'Living' },
-            { id: 'prd', title: 'PRD 상세 기획서', tag: 'Masterplan' }
+            // 💡 명칭 순화된 데이터 적용
+            { id: 'prd', title: '프로젝트 통합 실행 기획서', tag: 'Masterplan' }
         ];
 
         const detailData = {
@@ -688,26 +807,26 @@
                     </section>
                 `
             },
+            // 💡 [UPDATE] PRD -> 프로젝트 통합 실행 기획서 (명칭 및 내용 순화)
             'prd': {
-                title: '제품 요구사항 문서 (PRD)',
+                title: '프로젝트 통합 실행 기획서',
                 sidebar: `
                     <li><a href="#section1" class="sidebar-link active block px-4 py-2">1. 배경 및 비전 정의</a></li>
                     <li><a href="#section2" class="sidebar-link block px-4 py-2">2. 타겟 유저와 페인포인트</a></li>
-                    <li><a href="#section3" class="sidebar-link block px-4 py-2">3. MVP 기능 요구사항</a></li>
-                    <li><a href="#section4" class="sidebar-link block px-4 py-2">4. 사용자 여정 지도 (UJM)</a></li>
-                    <li><a href="#section5" class="sidebar-link block px-4 py-2">5. 다차원적 KPI 및 브랜드 측정</a></li>
+                    <li><a href="#section3" class="sidebar-link block px-4 py-2">3. 초기 필수 도입 서비스</a></li>
+                    <li><a href="#section4" class="sidebar-link block px-4 py-2">4. 사용자 여정 지도</a></li>
+                    <li><a href="#section5" class="sidebar-link block px-4 py-2">5. 성과 지표 (KPI) 측정</a></li>
                     <li><a href="#section6" class="sidebar-link block px-4 py-2">6. 규제 리스크 대응 전략</a></li>
-                    <li><a href="#section7" class="sidebar-link block px-4 py-2">7. 3개년 마일스톤 및 로드맵</a></li>
+                    <li><a href="#section7" class="sidebar-link block px-4 py-2">7. 3개년 로드맵</a></li>
                 `,
                 content: `
                     <section id="section1" class="mb-16">
                         <h2 class="text-2xl font-bold text-gray-900 mb-6">1. 배경 및 비전 정의 (Background & Vision)</h2>
                         <p class="mb-4">대한민국은 심각한 지방 소멸 위기에 직면해 있으며, 그 상흔은 수백 채의 방치된 빈집으로 나타나고 있습니다. 본 프로젝트는 이 골칫거리인 유휴 공간을 <strong>디지털 노마드와 로컬 크리에이터를 위한 최적의 작업 공간</strong>으로 탈바꿈시킵니다.</p>
-                        <p class="mb-6">우리의 비전은 극단적으로 낮아진 임대료(고정비)를 통해 창작자들에게 실패를 두려워하지 않을 자유(경제적 해자)를 제공하고, 이들이 지역의 특산물을 AI로 브랜딩하여 자생적인 비즈니스 생태계를 구축하도록 돕는 것입니다.</p>
+                        <p class="mb-6">우리의 비전은 극단적으로 낮아진 임대료(고정비)를 통해 창작자들에게 실패를 두려워하지 않을 자유를 제공하고, 이들이 지역의 특산물을 AI로 브랜딩하여 자생적인 비즈니스 생태계를 구축하도록 돕는 것입니다.</p>
                     </section>
-
                     <section id="section2" class="mb-16">
-                        <h2 class="text-2xl font-bold text-gray-900 mb-6">2. 타겟 유저와 페인포인트 세분화 (Target & Pain Points)</h2>
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6">2. 타겟 유저와 페인포인트 세분화</h2>
                         <p class="mb-4">다층적인 이해관계자들의 상충하는 니즈를 하나의 플랫폼으로 묶어냅니다.</p>
                         <div class="bg-gray-50 border border-gray-200 p-6 rounded-2xl mb-6">
                             <ul class="space-y-4 text-gray-700">
@@ -717,26 +836,24 @@
                             </ul>
                         </div>
                     </section>
-
                     <section id="section3" class="mb-16">
-                        <h2 class="text-2xl font-bold text-gray-900 mb-6">3. MVP 기능 요구사항 (MoSCoW 우선순위)</h2>
-                        <p class="mb-4">플랫폼의 초기 안착에 꼭 필요한 핵심 기능부터 순차적으로 배포합니다.</p>
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6">3. 초기 필수 도입 서비스 (우선순위 체계)</h2>
+                        <p class="mb-4">플랫폼의 초기 안착에 꼭 필요한 핵심 서비스부터 단계적으로 구축하여 리스크를 최소화합니다.</p>
                         <ul class="list-none space-y-4 mb-6 text-gray-700">
                             <li class="flex items-start">
-                                <span class="bg-blue-100 text-blue-600 font-bold px-2 py-1 rounded text-xs mr-3 mt-1">P0</span>
-                                <div><strong>Must Have (필수):</strong> 빈집 공간 데이터베이스 연동, 장기/단기 예약 및 결제 시스템, 전자 계약(임대차) 기능, 사용자 본인 인증</div>
+                                <span class="bg-blue-100 text-blue-600 font-bold px-2 py-1 rounded text-xs mr-3 mt-1">1순위</span>
+                                <div><strong>필수 도입:</strong> 빈집 공간 데이터베이스 연동, 장기/단기 예약 및 결제 시스템, 전자 계약(임대차) 기능, 사용자 본인 인증</div>
                             </li>
                             <li class="flex items-start">
-                                <span class="bg-indigo-100 text-indigo-600 font-bold px-2 py-1 rounded text-xs mr-3 mt-1">P1</span>
-                                <div><strong>Should Have (중요):</strong> 위치 기반 동네 맛집/병원 지도, 커뮤니티 기반의 로컬 멘토(시골언니) 매칭 신청, 관리자용 예약 현황 대시보드</div>
+                                <span class="bg-indigo-100 text-indigo-600 font-bold px-2 py-1 rounded text-xs mr-3 mt-1">2순위</span>
+                                <div><strong>핵심 고도화:</strong> 위치 기반 동네 맛집/병원 지도, 커뮤니티 기반의 로컬 멘토(시골언니) 매칭 신청, 관리자용 예약 현황 대시보드</div>
                             </li>
                             <li class="flex items-start">
-                                <span class="bg-gray-100 text-gray-600 font-bold px-2 py-1 rounded text-xs mr-3 mt-1">P2</span>
-                                <div><strong>Could Have (선택):</strong> AI 로컬 에이전시 성과물(포트폴리오) 공유 갤러리, 지역 특산물 연계 판매(B2B) 채널</div>
+                                <span class="bg-gray-100 text-gray-600 font-bold px-2 py-1 rounded text-xs mr-3 mt-1">3순위</span>
+                                <div><strong>장기 부가 기능:</strong> AI 로컬 에이전시 성과물(포트폴리오) 공유 갤러리, 지역 특산물 연계 판매 채널 구축</div>
                             </li>
                         </ul>
                     </section>
-
                     <section id="section4" class="mb-16">
                         <h2 class="text-2xl font-bold text-gray-900 mb-6">4. 사용자 여정 지도 (User Journey Map)</h2>
                         <p class="mb-6">크리에이터가 청도에 관심을 갖고 완전히 정착하기까지의 핵심 여정입니다.</p>
@@ -748,59 +865,56 @@
                             <li><strong>유지 및 추천 (Retention & Referral):</strong> 저렴한 주거비와 늘어난 가처분 소득에 만족하여 1년 장기 계약으로 전환하고, 도시의 동료 크리에이터들을 청도로 초대함.</li>
                         </ol>
                     </section>
-
                     <section id="section5" class="mb-16">
-                        <h2 class="text-2xl font-bold text-gray-900 mb-6">5. 다차원적 KPI 및 브랜드 측정 (Brand Metrics)</h2>
-                        <p class="mb-4">단순 가입자 수를 넘어, Bloom Consulting의 프레임워크를 활용해 실질적 임팩트를 측정합니다.</p>
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6">5. 다차원적 성과 지표 (KPI) 및 브랜드 측정</h2>
+                        <p class="mb-4">단순 가입자 수를 넘어, 실질적인 지역 비즈니스 임팩트를 측정합니다.</p>
                         <div class="grid md:grid-cols-2 gap-6 mb-6">
                             <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200">
-                                <h5 class="font-bold text-gray-900 mb-2 text-lg">📈 정량적 비즈니스 임팩트</h5>
+                                <h5 class="font-bold text-gray-900 mb-2 text-lg">📈 정량적 비즈니스 지표</h5>
                                 <ul class="list-disc pl-5 text-gray-600 space-y-1 text-sm">
-                                    <li>빈집 재생 및 리모델링 완료 건수 (연간 10채 목표)</li>
+                                    <li>빈집 재생 및 리모델링 완료 건수</li>
                                     <li>정착민의 평균 체류 기간 (리텐션 지표)</li>
-                                    <li>크리에이터-소상공인 간 비즈니스 매칭 성사 건수</li>
+                                    <li>크리에이터-소상공인 간 비즈니스 매칭 건수</li>
                                 </ul>
                             </div>
                             <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200">
                                 <h5 class="font-bold text-gray-900 mb-2 text-lg">🔎 브랜드 평판 및 인지도</h5>
                                 <ul class="list-disc pl-5 text-gray-600 space-y-1 text-sm">
-                                    <li>청도 워케이션, 청도 한달살기 검색량(Digital Demand) 추이</li>
+                                    <li>청도 워케이션 검색량(Digital Demand) 추이</li>
                                     <li>소셜 미디어 내 청도 관련 긍/부정 감성 분석</li>
                                 </ul>
                             </div>
                         </div>
                     </section>
-
                     <section id="section6" class="mb-16">
-                        <h2 class="text-2xl font-bold text-gray-900 mb-6">6. 규제 리스크 식별 및 대응 전략 (Risk Management)</h2>
-                        <p class="mb-4">과거 제주 다자요가 초기에 겪었던 법적 규제를 사전에 식별하고 우회합니다.</p>
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6">6. 규제 리스크 식별 및 대응 전략</h2>
+                        <p class="mb-4">제주 다자요가 초기에 겪었던 법적 규제를 사전에 식별하고 돌파구를 마련합니다.</p>
                         <div class="bg-blue-50 border border-blue-100 p-6 rounded-2xl mb-6">
                             <ul class="space-y-3 text-gray-700">
                                 <li><strong>법적 리스크 (농어촌 민박업 규제):</strong> 현행법상 소유주가 상주하지 않는 빈집의 단기 임대는 불법 소지가 있음.</li>
                                 <li><strong>돌파 전략 (규제 샌드박스):</strong> 과학기술정보통신부 ICT 규제 샌드박스 실증특례를 신청하여 2년간 한시적 합법 영업권을 확보.</li>
-                                <li><strong>지속가능 전략 (조례 제정):</strong> 특례 기간 동안 안전성 및 지역 경제 기여도를 데이터로 증명하여, 청도군 자체 빈집 활용 특례 조례 제정을 유도함.</li>
+                                <li><strong>지속가능 전략 (조례 제정):</strong> 특례 기간 동안 안전성 및 지역 경제 기여도를 증명하여, 청도군 자체 빈집 활용 특례 조례 제정을 유도.</li>
                             </ul>
                         </div>
                     </section>
-
                     <section id="section7" class="mb-16">
-                        <h2 class="text-2xl font-bold text-gray-900 mb-6">7. 3개년 마일스톤 및 로드맵 (Roadmap)</h2>
-                        <p class="mb-6">프로젝트의 현실적인 기대치를 설정하기 위한 마일스톤 기반 3개년 타임라인입니다.</p>
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6">7. 3개년 마일스톤 및 로드맵</h2>
+                        <p class="mb-6">2026년 상반기를 기점으로 한 현실적인 통합 프로젝트 타임라인입니다.</p>
                         <ul class="space-y-6 text-gray-700 border-l-2 border-blue-200 pl-6 ml-2">
                             <li class="relative">
                                 <span class="absolute -left-[33px] top-1 w-4 h-4 bg-blue-600 rounded-full border-4 border-white"></span>
-                                <strong class="text-lg block mb-1 text-blue-800">Phase 1. 검증 및 자산 확보 (2025년 12월 ~ 2026년 2월)</strong>
-                                <p class="text-sm">빈집 1호 매입 완료, 본격 시행계획 수립 및 규제 샌드박스 신청 완료.</p>
+                                <strong class="text-lg block mb-1 text-blue-800">Phase 1. 자산 확보 및 기반 조성 (2026년 상반기)</strong>
+                                <p class="text-sm">현재 진행 중인 빈집 1호 매입을 마무리하고, 본격 시행계획 수립 및 규제 샌드박스 신청을 완료합니다.</p>
                             </li>
                             <li class="relative">
                                 <span class="absolute -left-[33px] top-1 w-4 h-4 bg-blue-600 rounded-full border-4 border-white"></span>
-                                <strong class="text-lg block mb-1 text-blue-800">Phase 2. 시범 운영 및 UX 개선 (2026년 하반기)</strong>
-                                <p class="text-sm">4개소 리모델링 완료 후 클로즈드 베타 테스트(CBT) 돌입. 크리에이터 피드백을 수집하여 MVP 기능 보완.</p>
+                                <strong class="text-lg block mb-1 text-blue-800">Phase 2. 시범 운영 및 서비스 고도화 (2026년 하반기 ~ 2027년 상반기)</strong>
+                                <p class="text-sm">초기 4개소의 리모델링을 완료하고 클로즈드 베타 테스트(CBT)에 돌입합니다. 입주 크리에이터들의 피드백을 수집하여 초기 필수 서비스를 보완합니다.</p>
                             </li>
                             <li class="relative">
                                 <span class="absolute -left-[33px] top-1 w-4 h-4 bg-blue-600 rounded-full border-4 border-white"></span>
-                                <strong class="text-lg block mb-1 text-blue-800">Phase 3. 스케일업 및 전국화 (2027년 연중)</strong>
-                                <p class="text-sm">총 10개 시설의 통합 앱 정식 런칭. 성공 데이터를 바탕으로 인근 지자체(밀양, 경산 등)로 로컬 비즈니스 모델 수출 및 확장.</p>
+                                <strong class="text-lg block mb-1 text-blue-800">Phase 3. 전면 런칭 및 전국 스케일업 (2027년 하반기 ~ 2028년)</strong>
+                                <p class="text-sm">총 10개 시설의 통합 플랫폼을 정식 런칭합니다. 누적된 성공 데이터를 바탕으로 인근 지자체(밀양, 경산 등)로 로컬 비즈니스 모델을 수출합니다.</p>
                             </li>
                         </ul>
                     </section>
@@ -848,12 +962,10 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // 💡 [NEW] 입주 문의 모달창 제어 자바스크립트
         function openInquiryModal() {
             const modal = document.getElementById('inquiry-modal');
             modal.classList.remove('hidden');
             modal.classList.add('flex');
-            // 부드러운 애니메이션 효과
             setTimeout(() => {
                 modal.classList.remove('opacity-0');
                 modal.querySelector('div').classList.remove('scale-95');
@@ -864,7 +976,6 @@
             const modal = document.getElementById('inquiry-modal');
             modal.classList.add('opacity-0');
             modal.querySelector('div').classList.add('scale-95');
-            // 애니메이션 끝난 후 완전 숨김
             setTimeout(() => {
                 modal.classList.add('hidden');
                 modal.classList.remove('flex');
@@ -872,15 +983,56 @@
         }
 
         function submitInquiry(e) {
-            e.preventDefault(); // 페이지 새로고침 방지
+            e.preventDefault();
             alert('문의가 성공적으로 접수되었습니다. 담당자가 확인 후 빠른 시일 내에 연락드리겠습니다!');
             closeInquiryModal();
         }
 
-        // 모달 바깥 배경 클릭 시 닫기
         document.getElementById('inquiry-modal').addEventListener('click', function(e) {
             if (e.target === this) closeInquiryModal();
         });
+
+        function openPersonaModal(id) {
+            const data = personaData[id];
+            
+            document.getElementById('persona-img').src = data.image;
+            document.getElementById('persona-role').innerText = data.role;
+            document.getElementById('persona-name').innerText = data.name;
+            document.getElementById('persona-location').innerText = data.location;
+            document.getElementById('persona-quote').innerText = `"${data.quote}"`;
+            document.getElementById('persona-before').innerText = data.before;
+            document.getElementById('persona-after').innerText = data.after;
+            document.getElementById('persona-journey').innerText = data.journey;
+            
+            let featuresHtml = '';
+            data.features.forEach(feature => {
+                featuresHtml += `<li class="flex items-center text-sm text-gray-700"><span class="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></span>${feature}</li>`;
+            });
+            document.getElementById('persona-features').innerHTML = featuresHtml;
+
+            const modal = document.getElementById('persona-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modal.querySelector('div').classList.remove('scale-95');
+            }, 10);
+        }
+
+        function closePersonaModal() {
+            const modal = document.getElementById('persona-modal');
+            modal.classList.add('opacity-0');
+            modal.querySelector('div').classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }, 300);
+        }
+
+        document.getElementById('persona-modal').addEventListener('click', function(e) {
+            if (e.target === this) closePersonaModal();
+        });
+
     </script>
 </body>
 </html>
